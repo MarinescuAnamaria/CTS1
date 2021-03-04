@@ -1,8 +1,10 @@
 package sem2cts;
 
+import java.text.DateFormatSymbols;
+
 public class CalendarUtil
 {
-	public String weekdDay(int day) {
+	public String weekdDay(int day) throws IncorectDayException {
 	if(day==1)
 		return "Sunday";
 	else if (day==2)
@@ -17,7 +19,7 @@ public class CalendarUtil
 		return "Friday";
 	else if (day==7)
 		return "Saturday";
-	return null;
+	throw new IncorectDayException("Only 7 days");
 	}
 
 	public String weekDay2(int day)
@@ -42,9 +44,19 @@ public class CalendarUtil
 	}
 		
    }
-	public String weekDay3(int day) {
+	public String weekDay3(int day) throws IncorectDayException {
+		if(day<1 || day>7)
+			throw new IncorectDayException("Only 7 days");
+			
 		String[] weekDays= {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Sturday"};
 		return weekDays[day-1];
 		
+	}
+	public String weekDay4(int day) throws IncorectDayException
+	{
+		if(day<1 || day>7)
+			throw new IncorectDayException("Only 7 days");
+		String days[]=new DateFormatSymbols().getWeekdays();
+		return days[day-1];
 	}
 }
