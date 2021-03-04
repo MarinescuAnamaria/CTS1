@@ -6,5 +6,6 @@ public class Main{
 CalendarUtil cu=new CalendarUtil();
 System.out.println(cu.weekdDay(3));
 System.out.println(cu.weekDay2(3));
+System.out.println(cu.weekDay3(3));
 }
 }

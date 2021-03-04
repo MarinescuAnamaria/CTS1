@@ -32,7 +32,7 @@ public class CalendarUtil
 			case 4:
 				return "Wednesday";
 			case 5:
-				return "Thursay";
+				return "Thursday";
 			case 6:
 				return "Friday";
 			case 7:
@@ -42,5 +42,9 @@ public class CalendarUtil
 	}
 		
    }
-	
+	public String weekDay3(int day) {
+		String[] weekDays= {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Sturday"};
+		return weekDays[day-1];
+		
+	}
 }
