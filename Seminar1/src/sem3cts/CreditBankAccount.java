@@ -1,10 +1,8 @@
 package sem3cts;
 
-public class CreditBankAccount implements Receivable {
+public class CreditBankAccount extends BankAccount implements Receivable {
 
-	private long balance;
-	private String iban;
-	private Persoana accountHolder;
+
 	
 	public CreditBankAccount(String iban, Persoana accountHolder, long balance)
 	{

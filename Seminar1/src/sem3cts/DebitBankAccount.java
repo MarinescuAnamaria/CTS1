@@ -1,6 +1,6 @@
 package sem3cts;
 
-public class DebitBankAccount implements Payable, Receivable {
+public class DebitBankAccount implements Payable, Receivable, Transferable {
 	private String iban;
 	private double balance;
 	private Persoana accountHolder;
@@ -38,6 +38,13 @@ public class DebitBankAccount implements Payable, Receivable {
 
 	public Persoana getAccountHolder() {
 		return accountHolder;
+	}
+
+	@Override
+	public void transfer(Receivable destination, long amount) throws InsuficientFundsException {
+		// TODO Auto-generated method stub
+		this.withdraw(amount);
+		destination.deposit(amount);
 	}
 	
 
