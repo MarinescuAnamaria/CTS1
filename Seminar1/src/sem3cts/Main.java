@@ -29,7 +29,7 @@ public class Main{
 public static void main(String[] args)
 {
 	Persoana p=new Persoana("Petru");
-	BankAccount account = new BankAccount("INGB123242342", p);
+	DebitBankAccount account = new DebitBankAccount("INGB123242342", p);
 	
 	account.deposit(100);
 	try {
@@ -53,24 +53,28 @@ public static void main(String[] args)
 	} catch (InsuficientFundsException e) {
 		System.out.println(e.getMessage());
 	}
-	Map<Persoana, BankAccount>  employees= new HashMap<>();
+	Map<Persoana, Receivable>  employees= new HashMap<>();
 	Persoana p1=new Persoana("Chuck Norris");
-	BankAccount b1= new BankAccount("RFZ4648734684", p1);
+	CreditBankAccount b1= new CreditBankAccount("RFZ4648734684", p1, -500);
 	
 	Persoana p2=new Persoana("Arnold");
-	BankAccount b2= new BankAccount("ING64734674474", p2);
+	DebitBankAccount b2= new DebitBankAccount("ING64734674474", p2);
 	
 	Persoana p3=new Persoana("Van Damme");
-	BankAccount b3= new BankAccount("BT464647644484", p3);
+	DebitBankAccount b3= new DebitBankAccount("BT464647644484", p3);
 	
 	employees.put(p1, b1);
 	employees.put(p2, b2);
 	employees.put(p3, b3);
-	for(Account a: employees.values()) {
+	for(Receivable a: employees.values()) {
 		a.deposit(1000);
 	}
 	
-	for(Account a: employees.values()) {
+	Map<Persoana, Payable> union =new HashMap<>();
+	union.put(p2,b2);
+	union.put(p3, b3);
+	
+	for(Payable a: union.values()) {
 		try {
 		a.withdraw(10);
 		}

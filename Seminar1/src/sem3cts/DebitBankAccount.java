@@ -1,12 +1,12 @@
 package sem3cts;
 
-public class BankAccount implements Account {
+public class DebitBankAccount implements Payable, Receivable {
 	private String iban;
 	private double balance;
 	private Persoana accountHolder;
 	private  String accountHolderAdress;
 	
-	public BankAccount(String iban, Persoana persoana)
+	public DebitBankAccount(String iban, Persoana persoana)
 	{
 		this.iban=iban;
 		this.accountHolder=persoana;

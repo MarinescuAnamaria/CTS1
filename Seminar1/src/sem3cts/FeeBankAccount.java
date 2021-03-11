@@ -1,6 +1,6 @@
 package sem3cts;
 
-public class FeeBankAccount extends BankAccount {
+public class FeeBankAccount extends DebitBankAccount {
 	private long fee=2;
 	public FeeBankAccount(String iban, Persoana persoana) {
 		super(iban, persoana);

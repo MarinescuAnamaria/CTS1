@@ -27,7 +27,7 @@ public class Main{
 public static void main(String[] args)
 {
 	Persoana p=new Persoana("Petru");
-	BankAccount account = new BankAccount("INGB123242342", p);
+	DebitBankAccount account = new DebitBankAccount("INGB123242342", p);
 	
 	account.deposit(100);
 	try {
