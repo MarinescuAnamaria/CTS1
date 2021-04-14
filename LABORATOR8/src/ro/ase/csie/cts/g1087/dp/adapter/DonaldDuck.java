@@ -44,4 +44,10 @@ public class DonaldDuck implements ActiuniDisney {
 		
 	}
 
+	@Override
+	public String getNume() {
+		// TODO Auto-generated method stub
+		return denumire;
+	}
+
 }
